@@ -1,0 +1,61 @@
+:root {
+  --primary-bg: #F8F3FF;
+  --primary: #F3D015;
+  --gray-bg: #303030;
+  --text-color: #3D3948;
+  --primary-purple: #9A77FF;
+  --button-bg: #D8D8D8;
+}
+
+@font-face {
+  src: url("~/assets/fonts/Comfortaa-Regular.ttf");
+  font-family: Comfortaa;
+}
+
+* {
+  font-family: Comfortaa;
+  transition: all .3s;
+  text-transform: capitalize;
+  color: var(--text-color);
+}
+
+body {
+  background-color: var(--primary-bg);
+}
+
+.c-container {
+  width: 100%;
+  max-width: 1376px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.font-s-13 {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.base-button {
+  padding: 14px 16px;
+  border-radius: 100px;
+  background-color: var(--button-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.base-button svg {
+  margin-left: 16px;
+}
+
+.base-button:hover {
+  color: white;
+  background-color: var(--primary-purple);
+}
+
+.base-button:hover path {
+  stroke: white;
+}
