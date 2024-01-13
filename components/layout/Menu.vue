@@ -50,21 +50,17 @@
           </div>
         </div>
       </div>
-      <button class="base-button">
-        book services
-        <svg xmlns="http://www.w3.org/2000/svg" width="6" height="10" viewBox="0 0 6 10" fill="none">
-          <path d="M1 9L3.58579 6.41421C4.36684 5.63316 4.36683 4.36683 3.58579 3.58579L1 1" stroke="#3D3948"
-                stroke-width="2" stroke-linecap="round"/>
-        </svg>
-      </button>
+      <Button stroke="white" title="book services" type="base-button" base="c-button-1"/>
     </div>
   </div>
 </template>
 
 <script>
 import {menuLinks} from "./data";
+import Button from "~/components/elements/Button";
 
 export default {
+  components: {Button},
   data: () => ({
     menuLinks
   })

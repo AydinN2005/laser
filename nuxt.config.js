@@ -15,14 +15,13 @@ export default {
   css: ['~/assets/styles/main.css'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  plugins: [{src: 'plugins/owl.js', ssr: false}],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: [],
-  build: {
+  buildModules: [], build: {
     loaders: {
       sass: {
         implementation: require('sass'),
