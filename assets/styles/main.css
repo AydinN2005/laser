@@ -4,10 +4,13 @@
   --gray-bg: #3D3948;
   --gray-bg-2: #6B6870;
   --gray-text: #565656;
+  --gray-text-2: #646464;
   --text-color: #3D3948;
   --primary-purple: #9A77FF;
   --button-bg: #D8D8D8;
   --primary-blue: #21978C;
+  --box-bg: #D4C2FF;
+  --input-border: #303030;
 }
 
 @font-face {
@@ -20,8 +23,17 @@
   font-family: farro;
 }
 
+@font-face {
+  src: url("~/assets/fonts/Inter-Regular.ttf");
+  font-family: inter;
+}
+
 .farro-font {
   font-family: farro !important;
+}
+
+.inter-font {
+  font-family: Inter !important;
 }
 
 * {
@@ -51,8 +63,16 @@ body {
   color: var(--gray-text);
 }
 
+.gray-text-2 {
+  color: var(--gray-bg-2);
+}
+
 .purple-color {
   color: var(--primary-purple);
+}
+
+.black-text {
+  color: var(--input-border);
 }
 
 .text-white {

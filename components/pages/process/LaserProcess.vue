@@ -1,0 +1,96 @@
+<template>
+  <div class="laser">
+    <div class="c-container">
+      <div class="title-box">
+        <span></span>
+        laser proccess
+      </div>
+      <div class="flex items-center relative w-max">
+        <h3 class="text-3xl font-medium">
+          Pre & Post Care Instruction
+        </h3>
+        <div class="relative">
+          <h2 class="text-5xl font-bold relative z-10">
+            easily till be you happy
+          </h2>
+          <img src="~/assets/images/img/whyusTextBg.png" class="w-full absolute bottom-0 right-0 w-full"
+               style="border-radius: 100px;bottom: -20px"
+               alt="">
+        </div>
+      </div>
+      <div class="grid grid-cols-12 w-full">
+        <div class="relative mt-8 w-full h-full col-start-1 col-end-4">
+          <div class="laser-card-bg-1"></div>
+          <div class="laser-card py-8 px-6 flex flex-col relative z-10">
+            <div class="flex flex-col">
+              <h3 class="laser-card-title font-bold text-white">
+                hair removal <br> for ever and
+              </h3>
+              <div class="font-bold purple-color p-1 rounded-full laser-card-title-box mt-5">
+                welcome to freedom
+              </div>
+            </div>
+            <p class="text-sm font-bold text-white mt-4 mb-14">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt .lit, sed do
+              eiusmod tempor incididunt .
+            </p>
+            <Button type="purple-button" title="book services" base="c-button-2" stroke="white"/>
+          </div>
+        </div>
+        <img src="~/assets/images/img/proseccWoman1.png" class="col-start-4 col-end-10" alt="">
+        <img src="~/assets/images/img/proseccWoman2.png" class="col-start-10 col-end-13 laser-third-woman-image" alt="">
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+import Button from "~/components/elements/Button";
+
+export default {
+  components: {Button}
+}
+</script>
+
+<style scoped lang="scss">
+.laser {
+  margin-top: 128px;
+
+  &-card {
+    height: 100%;
+    justify-content: space-between;
+
+    &-bg-1 {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 40px;
+    }
+
+    &-bg-1 {
+      background: var(--primary-purple);
+      transform: rotate(-2deg);
+    }
+
+    border-radius: 40px;
+    background: var(--input-border);
+    border: 1px solid var(--primary-purple);
+    box-shadow: 2px 2px 28px 0px rgba(255, 255, 255, 0.16) inset, 0px 8px 20px 0px rgba(48, 48, 48, 0.20);
+
+    &-title {
+      font-size: 32px;
+
+      &-box {
+        font-size: 20px;
+        background: white;
+        box-shadow: 0px 8px 12px 0px rgba(255, 255, 255, 0.24), -1px -1px 12px 0px rgba(0, 0, 0, 0.04) inset, 2px 2px 28px 0px rgba(255, 255, 255, 0.20) inset;
+      }
+    }
+  }
+
+  &-third-woman-image {
+    position: relative;
+    top: -80px;
+  }
+}
+</style>

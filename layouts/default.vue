@@ -24,18 +24,18 @@
         <div class="top-section-right-line"></div>
       </div>
     </div>
-    <div class="">
-      <Menu/>
-    </div>
+    <Menu/>
     <nuxt/>
+    <Footer class="section-space"/>
   </div>
 </template>
 
 <script>
 import Menu from "~/components/layout/Menu";
+import Footer from "~/components/layout/Footer";
 
 export default {
-  components: {Menu}
+  components: {Footer, Menu}
 }
 </script>
 

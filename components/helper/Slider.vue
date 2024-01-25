@@ -21,3 +21,32 @@ export default {
   max-width: 100%;
 }
 </style>
+<style lang="scss">
+.slider-container {
+  .owl-dot {
+    transition: all .3s !important;
+
+    span {
+      transition: all .3s !important;
+      width: 16px !important;
+      height: 16px !important;
+      background: #595763 !important;
+    }
+
+    &:hover {
+      span {
+        background: var(--primary-purple) !important;
+      }
+    }
+  }
+
+  .owl-dots {
+    .active {
+      span {
+        width: 42px !important;
+        background: var(--primary-purple) !important;
+      }
+    }
+  }
+}
+</style>
