@@ -6,7 +6,7 @@
         satisfaction
       </div>
       <div class="relative">
-        <div class="flex flex-col items-center">
+        <div class="flex flex-col items-center relative z-10">
           <h3 class="section-title-1 text-center">
             The satisfaction of my customers is
           </h3>
@@ -14,6 +14,8 @@
             the biggest symbol of your trust
           </h2>
         </div>
+        <img src="~/assets/images/img/whyusTextBg.png" class="w-full absolute bottom-0" style="border-radius: 100px"
+             alt="">
       </div>
     </div>
     <div class="relative">
@@ -25,14 +27,14 @@
         </div>
       </div>
       <div class="relative z-10">
-        <Slider class="slider-container" :items="1" :margin="24" :dots="true" :nav="false" :auto-play="true">
+        <Slider class="slider-container" :items="1" :margin="24" :dots="true" :nav="false" :auto-play="false">
           <div class="slider-container-inner flex flex-col items-center relative" v-for="item in cards" :key="item.id">
             <img :src="item.img" class="absolute top-0 left-0" alt="">
             <div class="flex flex-col items-center relative z-10  ">
-              <strong class="font-bold text-2xl text-white">
+              <strong class="font-bold text-xl md:text-2xl text-white">
                 {{ item.title }}
               </strong>
-              <p class="font-bold text-base mt-4 satis-slider-card-desc text-center text-white">
+              <p class="font-bold text-sm md:text-base mt-4 satis-slider-card-desc text-center text-white">
                 <span>“</span> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                 incididunt
                 ut labore
@@ -227,6 +229,61 @@ export default {
       height: 265px;
       border-radius: 37px;
       border-bottom-right-radius: 50px;
+    }
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .satis {
+    .section-title-1 {
+      font-size: 24px;
+    }
+
+    .section-title-2 {
+      font-size: 36px;
+    }
+
+    .slider-container {
+      &-inner {
+        height: 300px;
+
+        img {
+          height: 100%;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .satis {
+    .section-title-1, .section-title-2 {
+      font-size: 16px;
+    }
+    .slider-container{
+      top: 20px;
+      width: 100%;
+      &-inner{
+        padding: 63px 16px 0 16px;
+        height: 250px;
+      }
+    }
+    &-slider{
+      &-card{
+        &-vote{
+          bottom: 10px;
+        }
+        &-desc{
+          text-overflow: ellipsis;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          display: -webkit-box;
+          -webkit-line-clamp: 3; /* number of lines to show */
+          line-clamp: 3;
+          -webkit-box-orient: vertical;
+          text-align: center;
+        }
+      }
     }
   }
 }

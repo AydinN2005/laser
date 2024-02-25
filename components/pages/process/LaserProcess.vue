@@ -1,28 +1,32 @@
 <template>
   <div class="laser">
-    <div class="c-container">
+    <div class="c-container md:block flex flex-col items-center">
       <div class="title-box">
         <span></span>
         laser proccess
       </div>
-      <div class="flex items-center relative w-max">
-        <h3 class="text-3xl font-medium">
-          Pre & Post Care Instruction
-        </h3>
+      <div class="flex items-center relative md:w-max laser-title-container">
         <div class="relative">
-          <h2 class="text-5xl font-bold relative z-10">
-            easily till be you happy
-          </h2>
+          <div class="flex flex-col md:items-start items-center">
+            <h3 class="section-title-1">
+              Pre & Post Care Instruction
+            </h3>
+            <div class="relative">
+              <h2 class="section-title-2 relative z-10">
+                easily till be you happy
+              </h2>
+            </div>
+          </div>
           <img src="~/assets/images/img/whyusTextBg.png" class="w-full absolute bottom-0 right-0 w-full"
-               style="border-radius: 100px;bottom: -20px"
+               style="border-radius: 100px;bottom: 0px"
                alt="">
         </div>
       </div>
-      <div class="grid grid-cols-12 w-full">
+      <div class="grid grid-cols-12 laser-woman-images-container w-full">
         <div class="relative mt-8 w-full h-full col-start-1 col-end-4">
           <div class="laser-card-bg-1"></div>
           <div class="laser-card py-8 px-6 flex flex-col relative z-10">
-            <div class="flex flex-col">
+            <div class="flex flex-col md:items-start items-center">
               <h3 class="laser-card-title font-bold text-white">
                 hair removal <br> for ever and
               </h3>
@@ -30,15 +34,17 @@
                 welcome to freedom
               </div>
             </div>
-            <p class="text-sm font-bold text-white mt-4 mb-14">
+            <p class="text-sm font-bold text-white mt-4 mb-14 md:text-left text-center">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt .lit, sed do
               eiusmod tempor incididunt .
             </p>
             <Button type="purple-button" title="book services" base="c-button-2" stroke="white"/>
           </div>
         </div>
-        <img src="~/assets/images/img/proseccWoman1.png" class="col-start-4 col-end-10" alt="">
-        <img src="~/assets/images/img/proseccWoman2.png" class="col-start-10 col-end-13 laser-third-woman-image" alt="">
+        <div class="flex col-start-4 col-end-13 laser-woman-images-container-inner">
+          <img src="~/assets/images/img/proseccWoman1.png" class="w-full" alt="">
+          <img src="~/assets/images/img/proseccWoman2.png" class="w-full laser-third-woman-image" alt="">
+        </div>
       </div>
     </div>
   </div>
@@ -91,6 +97,76 @@ export default {
   &-third-woman-image {
     position: relative;
     top: -80px;
+  }
+}
+
+@media screen and (min-width: 1281px) {
+  .laser {
+    &-woman-images-container-inner {
+      max-height: 500px;
+    }
+    &-third-woman-image{
+      height: 700px;
+    }
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .laser {
+    &-card {
+      &-title {
+        br {
+          display: none;
+        }
+
+        &-box {
+
+        }
+      }
+    }
+
+    &-title-container {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    &-woman-images-container {
+      display: flex;
+      flex-direction: column;
+
+      &-inner {
+        margin-top: 40px;
+
+        img {
+          &:first-child {
+            max-height: 500px;
+          }
+
+          &:last-child {
+            max-height: 800px;
+          }
+        }
+      }
+    }
+
+    &-third-woman-image {
+      top: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .laser {
+    &-card {
+      &-title {
+        font-size: 19px;
+
+        &-box {
+          font-size: 16px;
+          width: max-content;
+        }
+      }
+    }
   }
 }
 </style>

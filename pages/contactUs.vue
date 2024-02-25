@@ -2,9 +2,9 @@
   <div class="c-container flex flex-col items-center contact-us">
     <div class="flex items-end justify-between w-full">
       <ContactLeft class="w-full"/>
-      <ContactRight class="w-full ml-10"/>
+      <ContactRight class="w-full ml-10 lg:block hidden"/>
     </div>
-    <Button stroke="white" title="send message" type="purple-button" base="c-button-2" class="mt-10"/>
+    <Button stroke="white" title="send message" type="purple-button" base="c-button-2" class="mt-10 lg:w-max w-full"/>
   </div>
 </template>
 

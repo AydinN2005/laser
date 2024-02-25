@@ -4,7 +4,7 @@
       <div class="relative">
         <div class="footer-top-bg-1 absolute"></div>
         <div class="footer-top-bg-2 absolute"></div>
-        <div class="relative footer-top-inner p-10 flex flex-col items-center">
+        <div class="relative footer-top-inner py-8 px-4 md:p-10 flex flex-col items-center">
           <div class="footer-top-inner-bg absolute top-0 left-0"></div>
           <div class="title-box-white relative z-10">
             <span></span>
@@ -20,16 +20,16 @@
           </div>
           <div
             class="flex flex-col items-center footer-top-inner-inputs w-full">
-            <div class="flex items-center justify-center mb-11 w-full">
-              <FooterInput type="text" class="mr-10" title="first name" place-holder="your first name"/>
+            <div class="flex md:flex-row flex-col items-center justify-center mb-11 w-full">
+              <FooterInput type="text" class="mb-10 md:mr-10" title="first name" place-holder="your first name"/>
               <FooterInput type="text" title="last name" place-holder="your last name"/>
             </div>
-            <div class="flex items-center justify-center mb-11 w-full">
-              <FooterInput type="email" class="mr-10" title="email" place-holder="your email"/>
+            <div class="flex md:flex-row flex-col items-center justify-center mb-11 w-full">
+              <FooterInput type="email" class="mb-10 md:mr-10" title="email" place-holder="your email"/>
               <FooterInput type="text" title="phone number" place-holder="your phone number"/>
             </div>
-            <div class="flex items-center justify-center w-full">
-              <FooterInput type="select" :options="locations" class="mr-10" title="preferred location"
+            <div class="flex md:flex-row flex-col items-center justify-center w-full">
+              <FooterInput type="select" :options="locations" class="mb-10 md:mr-10" title="preferred location"
                            place-holder="your location"/>
               <FooterInput type="select" :options="operators" title="choose operator" place-holder="your operator"/>
             </div>
@@ -46,8 +46,8 @@
     </div>
     <FooterBottom/>
     <div class="footer-divider"></div>
-    <div class="w-full flex items-center justify-between mb-12">
-      <span class="text-base font-normal">
+    <div class="w-full flex items-center md:flex-row flex-col-reverse justify-between mb-12">
+      <span class="text-base font-normal md:mt-0 mt-6">
         @2024 by heeriye | all right reserved
       </span>
       <div class="flex items-center">
@@ -103,8 +103,8 @@ export default {
 .footer {
   &-top {
     &-bg-1, &-bg-2 {
-      width: 100%;
-      height: 100%;
+      width: 90%;
+      height: 90%;
       border-radius: 56px;
     }
 
@@ -173,6 +173,16 @@ export default {
 
     &:hover {
       background: var(--primary-purple);
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .footer {
+    &-top {
+      &-bg-1, &-bg-2 {
+        display: none !important;
+      }
     }
   }
 }

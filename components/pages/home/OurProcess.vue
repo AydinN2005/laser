@@ -1,13 +1,13 @@
 <template>
   <div class="c-container process">
-    <div class="flex items-end justify-between">
-      <div class="flex flex-col">
+    <div class="flex lg:flex-row flex-col items-center lg:items-end justify-between">
+      <div class="flex flex-col lg:items-start items-center">
         <div class="title-box">
           <span></span>
           our process
         </div>
         <div class="relative">
-          <div class="flex flex-col relative z-10">
+          <div class="flex flex-col lg:items-start items-center relative z-10">
             <h3 class="section-title-1">
               by easy and healthy way
             </h3>
@@ -18,17 +18,17 @@
           <img src="~/assets/images/img/whyusTextBg.png" class="absolute bottom-0" style="border-radius: 100px" alt="">
         </div>
       </div>
-      <div class="flex items-center mb-3">
+      <div class="flex items-center mb-3 lg:mt-0 mt-10">
         <Button type="purple-button" title="book services" base="c-button-2" stroke="white" class="mr-6"/>
         <Button type="vacant-button" title="our services" base="c-button-2" stroke="#3D3948"/>
       </div>
     </div>
     <div class="relative flex items-center justify-center">
-      <img src="~/assets/images/icons/processRelationLeft.png" class="absolute" style="left: 30%;top: 65%;z-index: 10;"
+      <img src="~/assets/images/icons/processRelationLeft.png" class="absolute left-relation"
            alt="">
-      <img src="~/assets/images/icons/processRelationRight.png" class="absolute" style="right: 30%;top: 65%;z-index: 10;"
+      <img src="~/assets/images/icons/processRelationRight.png" class="absolute right-relation"
            alt="">
-      <div class="grid grid-cols-3 gap-5 process-cards ">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 process-cards ">
         <div v-for="item in cards" :key="item.id" class="relative process-card-container">
           <div class="process-card-bg"></div>
           <div class="process-card-bg-2"></div>
@@ -52,7 +52,7 @@
             <div class="flex flex-col items-center relative z-10 process-card-texts">
               <div class="flex items-center">
                 <img src="~/assets/images/icons/star-white.svg" alt="">
-                <span class="text-xl font-bold text-white">
+                <span class="text-xl font-bold text-white lg:text-left text-center">
                 {{ item.title }}
               </span>
                 <img src="~/assets/images/icons/star-white.svg" alt="">
@@ -167,6 +167,55 @@ export default {
           opacity: 1 !important;
         }
       }
+    }
+  }
+
+  .left-relation {
+    left: 30%;
+    top: 65%;
+    z-index: 10;
+  }
+
+  .right-relation {
+    top: 65%;
+    right: 30%;
+    z-index: 10;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .process {
+    .left-relation {
+      top: unset !important;
+      left: 28%;
+      bottom: 20px;
+    }
+
+    .right-relation {
+      top: 32% !important;
+      right: 28%;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .process {
+    &-cards {
+      row-gap: 81px;
+    }
+
+    .right-relation, .left-relation {
+      top: 39% !important;
+      right: unset;
+      left: -12px;
+      height: 22px;
+      transform: rotate(270deg);
+    }
+
+    .left-relation {
+      left: unset;
+      right: -12px;
+      top: 71% !important;
     }
   }
 }

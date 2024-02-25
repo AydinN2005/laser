@@ -1,12 +1,12 @@
 <template>
   <div class="c-container flex flex-col body">
-    <div class="flex flex-col">
+    <div class="flex flex-col lg:items-start items-center">
       <div class="title-box">
         <span></span>
         body area
       </div>
-      <div class="flex items-end w-full justify-between">
-        <div class="flex flex-col relative w-max">
+      <div class="flex lg:flex-row flex-col items-center lg:items-end w-full justify-between">
+        <div class="flex flex-col lg:items-start items-center relative w-max">
           <h3 class="section-title-1">
             we defuzz
           </h3>
@@ -15,12 +15,13 @@
           </h2>
           <img src="~/assets/images/img/whyUsTextBg.png" class="absolute w-full -z-10 bottom-0" alt="">
         </div>
-        <div class="flex items-center mb-3">
-          <Button type="purple-button" title="book services" base="c-button-2" stroke="white" class="mr-6"/>
-          <Button type="vacant-button" title="our services" base="c-button-2" stroke="#3D3948"/>
+        <div class="flex items-center mb-3 lg:mt-0 mt-9 md:w-max w-full">
+          <Button type="purple-button" title="book services" base="c-button-2" stroke="white"
+                  class="mr-6 md:w-max w-full"/>
+          <Button type="vacant-button" title="our services" base="c-button-2" stroke="#3D3948" class="md:w-max w-full"/>
         </div>
       </div>
-      <div class="body-cards grid grid-cols-4 gap-x-5">
+      <div class="body-cards grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-x-5 w-full">
         <div v-for="item in cards" :key="item.id" class="relative body-card-container">
           <div class="body-card-bg"></div>
           <div class="flex flex-col items-center body-card">
@@ -32,7 +33,7 @@
             </div>
             <div class="flex items-center">
               <img src="~/assets/images/icons/Star.svg" alt="">
-              <span class="text-xl font-bold mx-3">
+              <span class="text-sm md:text-xl font-bold mx-3 body-card-title">
               {{ item.title }}
             </span>
               <img src="~/assets/images/icons/Star.svg" alt="">
@@ -183,6 +184,33 @@ export default {
         rect {
           fill: var(--primary-purple);
         }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .section-title-2 {
+    font-size: 56px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .section-title-2 {
+    font-size: 24px;
+  }
+  .body {
+    &-card {
+      &-title {
+        //text-overflow: ellipsis;
+        //overflow: hidden;
+        //text-overflow: ellipsis;
+        //display: -webkit-box;
+        //-webkit-line-clamp: 1; /* number of lines to show */
+        //line-clamp: 1;
+        //-webkit-box-orient: vertical;
+        //max-width: 90px;
+
       }
     }
   }

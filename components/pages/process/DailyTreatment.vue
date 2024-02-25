@@ -18,7 +18,7 @@
              style="border-radius: 100px"
              alt="">
       </div>
-      <p class="mt-4 mb-10">
+      <p class="mt-4 mb-10 text-center md:text-base text-sm">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt .lit, sed do eiusmod
         tempor incididunt .
       </p>
@@ -43,5 +43,20 @@ export default {
 </script>
 
 <style scoped>
-
+@media screen and (max-width: 1023px) {
+  .section-title-1{
+    font-size: 24px;
+  }
+  .section-title-2{
+    font-size: 48px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .section-title-2{
+    font-size: 24px;
+  }
+  .section-title-1{
+    font-size: 16px;
+  }
+}
 </style>

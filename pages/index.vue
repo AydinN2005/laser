@@ -1,8 +1,9 @@
 <template>
   <div>
-    <HomeHero/>
+    <HomeHero class=""/>
     <OutFeatures class="section-space"/>
     <WhyUs class="section-space"/>
+    <OurServices class="section-space"/>
     <BodyArea class="section-space"/>
     <Pricing class="section-space"/>
     <OurProcess class="section-space"/>
@@ -22,9 +23,10 @@ import OurProcess from "~/components/pages/home/OurProcess";
 import FAQ from "~/components/pages/home/FAQ";
 import Satisfaction from "~/components/pages/home/Satisfaction";
 import OurBlog from "~/components/pages/home/OurBlog";
+import OurServices from "~/components/pages/home/OurServices";
 
 export default {
   name: 'IndexPage',
-  components: {OurBlog, Satisfaction, FAQ, OurProcess, Pricing, BodyArea, WhyUs, OutFeatures, HomeHero},
+  components: {OurServices, OurBlog, Satisfaction, FAQ, OurProcess, Pricing, BodyArea, WhyUs, OutFeatures, HomeHero},
 }
 </script>
