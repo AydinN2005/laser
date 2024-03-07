@@ -19,11 +19,16 @@
         </div>
       </div>
     </div>
-    <div class="lg:col-start-7 lg:col-end-13 overflow-hidden" v-if="cards">
-      <Slider :items="2" :nav="false" :dots="true" :margin="59" :loop="false" :auto-play="true" :center="false"
-              :responsive="{768: {items: 2}, 1024: {items: 2}, 0: {items: 1}}">
-        <ServicesCard v-for="item in cards" :key="item.id" :title="item.title" :desc="item.desc" :img="item.img"/>
-      </Slider>
+    <div class="lg:col-start-7 lg:col-end-13 overflow-hidden">
+      <div v-if="cards">
+        <Slider :items="2" :nav="false" :dots="true" :margin="59" :loop="false" :auto-play="true"
+                :center="false"
+                :responsive="{768: {items: 2}, 1024: {items: 2}, 0: {items: 1}}"
+        >
+          <ServicesCard v-for="item in cards" :key="item.id" :title="item.title" :desc="item.short_description"
+                        :img="item.image"/>
+        </Slider>
+      </div>
     </div>
   </div>
 </template>
@@ -31,37 +36,23 @@
 <script>
 import Slider from "~/components/helper/Slider";
 import ServicesCard from "~/components/elements/ServicesCard";
+import {getAllServices} from "~/services/api/home";
 
 export default {
   components: {ServicesCard, Slider},
   data: () => ({
-    cards: [
-      {
-        id: 1,
-        title: "sharp light",
-        desc: "is the highly advanced non-invasive medical device that effectively resolves challenging face and body aesthetic needs, such as cellulite reduction.",
-        img: require('~/assets/images/img/service1.png')
-      },
-      {
-        id: 2,
-        title: "sharp light",
-        desc: "is the highly advanced non-invasive medical device that effectively resolves challenging face and body aesthetic needs, such as cellulite reduction.",
-        img: require('~/assets/images/img/service2.png')
-      },
-      {
-        id: 3,
-        title: "sharp light",
-        desc: "is the highly advanced non-invasive medical device that effectively resolves challenging face and body aesthetic needs, such as cellulite reduction.",
-        img: require('~/assets/images/img/service1.png')
-      },
-      {
-        id: 1,
-        title: "sharp light",
-        desc: "is the highly advanced non-invasive medical device that effectively resolves challenging face and body aesthetic needs, such as cellulite reduction.",
-        img: require('~/assets/images/img/service1.png')
-      },
-    ]
-  })
+    cards: null
+  }),
+  mounted() {
+    getAllServices((isOkay, data) => {
+      if (isOkay) {
+        this.cards = data;
+        console.log(this.cards)
+      } else {
+        console.log(data)
+      }
+    })
+  }
 }
 </script>
 

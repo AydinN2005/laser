@@ -22,9 +22,9 @@
           our features
         </div>
         <h2 class="features-left-title lg:w-max w-full text-center">
-          User satisfaction <br class="lg:block hidden" />
+          User satisfaction <br class="lg:block hidden"/>
 
-          comes from <br />
+          comes from <br/>
           <span class="text-white"> the best features </span>
         </h2>
         <p
@@ -82,7 +82,7 @@
               </g>
               <defs>
                 <clipPath id="clip0_128_204">
-                  <rect width="20" height="20" fill="white" />
+                  <rect width="20" height="20" fill="white"/>
                 </clipPath>
               </defs>
             </svg>
@@ -115,7 +115,7 @@
               </g>
               <defs>
                 <clipPath id="clip0_128_211">
-                  <rect width="20" height="20" fill="white" />
+                  <rect width="20" height="20" fill="white"/>
                 </clipPath>
               </defs>
             </svg>
@@ -136,7 +136,7 @@
               </g>
               <defs>
                 <clipPath id="clip0_128_206">
-                  <rect width="20" height="20" fill="white" />
+                  <rect width="20" height="20" fill="white"/>
                 </clipPath>
               </defs>
             </svg>
@@ -161,7 +161,7 @@
               </g>
               <defs>
                 <clipPath id="clip0_128_208">
-                  <rect width="20" height="20" fill="white" />
+                  <rect width="20" height="20" fill="white"/>
                 </clipPath>
               </defs>
             </svg>
@@ -170,7 +170,7 @@
             {{ item.title }}
           </h3>
           <p class="font-s-13">
-            {{ item.desc }}
+            {{ item.subtitle }}
           </p>
         </div>
       </div>
@@ -180,33 +180,22 @@
 
 <script>
 import Button from '~/components/elements/Button'
+import {features} from "~/services/api/home";
 
 export default {
-  components: { Button },
+  components: {Button},
   data: () => ({
-    boxes: [
-      {
-        id: 1,
-        title: 'best operators',
-        desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore .',
-      },
-      {
-        id: 2,
-        title: 'Variety of services',
-        desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore .',
-      },
-      {
-        id: 3,
-        title: 'supporting 24/7',
-        desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore .',
-      },
-      {
-        id: 4,
-        title: 'gold guarantee',
-        desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore .',
-      },
-    ],
+    boxes: []
   }),
+  mounted() {
+    features((isOkay, data) => {
+      if (isOkay) {
+        this.boxes.push(data)
+      } else {
+        console.log(data)
+      }
+    })
+  }
 }
 </script>
 
@@ -238,8 +227,8 @@ export default {
       border-radius: 56px;
       background: rgba(61, 57, 72, 0.48);
       box-shadow: 0px 8px 12px 0px rgba(61, 57, 72, 0.16),
-        -1px -1px 12px 0px rgba(0, 0, 0, 0.04) inset,
-        2px 2px 28px 0px rgba(255, 255, 255, 0.2) inset;
+      -1px -1px 12px 0px rgba(0, 0, 0, 0.04) inset,
+      2px 2px 28px 0px rgba(255, 255, 255, 0.2) inset;
     }
   }
 
@@ -265,8 +254,8 @@ export default {
       transform: rotate(2deg);
       background: var(--primary-purple);
       box-shadow: 0px 8px 12px 0px rgba(61, 57, 72, 0.16),
-        -1px -1px 12px 0px rgba(0, 0, 0, 0.04) inset,
-        2px 2px 28px 0px rgba(255, 255, 255, 0.2) inset;
+      -1px -1px 12px 0px rgba(0, 0, 0, 0.04) inset,
+      2px 2px 28px 0px rgba(255, 255, 255, 0.2) inset;
     }
 
     &-white-bg {
@@ -274,8 +263,8 @@ export default {
       transform: rotate(-2deg);
       background: #d4c2ff;
       box-shadow: 0px 8px 12px 0px rgba(61, 57, 72, 0.16),
-        -1px -1px 12px 0px rgba(0, 0, 0, 0.04) inset,
-        2px 2px 28px 0px rgba(255, 255, 255, 0.2) inset;
+      -1px -1px 12px 0px rgba(0, 0, 0, 0.04) inset,
+      2px 2px 28px 0px rgba(255, 255, 255, 0.2) inset;
     }
 
     &-overlay {
@@ -286,8 +275,8 @@ export default {
       border-radius: 56px;
       background: rgba(61, 57, 72, 0.64);
       box-shadow: 0px 8px 12px 0px rgba(61, 57, 72, 0.16),
-        -1px -1px 12px 0px rgba(0, 0, 0, 0.04) inset,
-        2px 2px 28px 0px rgba(255, 255, 255, 0.2) inset;
+      -1px -1px 12px 0px rgba(0, 0, 0, 0.04) inset,
+      2px 2px 28px 0px rgba(255, 255, 255, 0.2) inset;
     }
 
     &-box {
@@ -319,8 +308,8 @@ export default {
         border-color: var(--primary-purple);
         background: var(--primary-purple);
         box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.16),
-          -1px -1px 12px 0px rgba(0, 0, 0, 0.04) inset,
-          2px 2px 28px 0px rgba(255, 255, 255, 0.2) inset;
+        -1px -1px 12px 0px rgba(0, 0, 0, 0.04) inset,
+        2px 2px 28px 0px rgba(255, 255, 255, 0.2) inset;
 
         path {
           fill: var(--primary-purple);
@@ -338,32 +327,40 @@ export default {
     }
   }
 }
+
 @media screen and (max-width: 767px) {
   .features {
     &-left {
       border-radius: 40px;
+
       &-overlay {
         border-radius: 40px;
       }
+
       &-title {
         font-size: 16px;
         margin: 0;
+
         span {
           font-size: 24px;
         }
       }
     }
+
     &-relation-img {
       top: 27.5%;
       height: 67px;
       width: 80%;
     }
+
     &-right {
       padding: 16px;
       border-radius: 40px;
+
       &-overlay {
         border-radius: 40px;
       }
+
       &-purple-bg,
       &-white-bg {
         display: none;

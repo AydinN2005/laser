@@ -70,10 +70,13 @@ export default {
   &-img {
     position: relative;
     z-index: 10;
+    width: 235px !important;
+    height: 125px !important;
+    border-radius: 32px !important;
 
     &-container {
       top: -62px;
-      left: -24px;
+      left: -14px;
     }
   }
 

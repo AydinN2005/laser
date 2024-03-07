@@ -21,6 +21,7 @@
       id=""
       :placeholder="placeHolder"
       :readonly="readOnly"
+      v-model="textInput"
     />
     <input
       :style="bg ? { background: `${bg} !important` } : {}"
@@ -72,7 +73,8 @@
         />
       </svg>
     </div>
-    <svg class="search-icon" v-if="icon" xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21"
+    <svg class="search-icon" v-if="icon === 'search'" xmlns="http://www.w3.org/2000/svg" width="20" height="21"
+         viewBox="0 0 20 21"
          fill="none">
       <g clip-path="url(#clip0_564_76)">
         <path
@@ -91,6 +93,10 @@
       <img v-if="!eye" @click="showEye" src="~/assets/images/img/eye2.svg" width="20"
            height="20" alt="">
     </div>
+    <div v-if="icon === 'tick'" class="search-icon" style="top: 16px !important;">
+      <img src="~/assets/images/img/circle.svg" v-if="textInput === ''" alt="">
+      <img src="~/assets/images/img/circleTick.svg" v-if="textInput !== ''" alt="">
+    </div>
   </div>
 </template>
 
@@ -99,7 +105,8 @@ export default {
   props: ['title', 'placeHolder', 'type', 'options', 'required', 'bg', 'icon', 'readOnly'],
   data: () => ({
     arrowStatus: false,
-    eye: false
+    eye: false,
+    textInput: '',
   }),
   methods: {
     hideEye() {
@@ -124,6 +131,8 @@ export default {
     padding: 21px 32px 12px 32px;
     background: var(--primary-bg);
     width: 100%;
+    font-size: 14px;
+    text-transform: none;
 
     &:focus {
       outline: none;

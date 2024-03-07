@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="relative">
     <div class="md:flex hidden top-section py-2.5 px-8 items-center justify-center">
       <div class="flex items-center w-full">
         <div class="top-section-left-line"></div>
@@ -47,6 +47,7 @@
       </div>
     </div>
     <Menu/>
+    <img src="~/assets/images/img/logoBg.png" class="absolute h-full w-full" style="z-index: -2" alt="">
     <nuxt/>
     <Footer class="section-space"/>
   </div>

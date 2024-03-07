@@ -1,6 +1,7 @@
 <template>
   <div class="c-container">
-    <div class="menu p-1 mt-11 flex items-center w-full justify-between">
+    <div class="menu p-1 mt-11 flex items-center w-full justify-between relative">
+      <MenuMobile :active="showMenu" @close="showMenu = false"/>
       <div class="flex items-center w-full justify-between">
         <div class="menu-links lg:flex hidden items-center">
           <nuxt-link to="#" class="menu-link font-s-13 py-3 px-4 rounded-full flex items-center"
@@ -25,7 +26,7 @@
             {{ link.title }}
           </nuxt-link>
         </div>
-        <div class="menu-icon lg:hidden">
+        <div class="menu-icon lg:hidden" @click="showMenu = !showMenu">
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g clip-path="url(#clip0_735_445)">
               <path
@@ -38,6 +39,8 @@
               </clipPath>
             </defs>
           </svg>
+        </div>
+        <div class="overlay" :style="showMenu ? {zIndex: 998,opacity: 1}: {zIndex: -100, opacity: 0}">
         </div>
         <div class="relative">
           <div class="menu-banner-triangle-1 absolute">
@@ -104,11 +107,13 @@
 <script>
 import {menuLinks} from "./data";
 import Button from "~/components/elements/Button";
+import MenuMobile from "~/components/layout/MenuMobile";
 
 export default {
-  components: {Button},
+  components: {MenuMobile, Button},
   data: () => ({
-    menuLinks
+    menuLinks,
+    showMenu: false,
   })
 }
 </script>
