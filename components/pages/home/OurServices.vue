@@ -41,17 +41,16 @@ import {getAllServices} from "~/services/api/home";
 export default {
   components: {ServicesCard, Slider},
   data: () => ({
-    cards: null
+    cards: [
+      {
+        id: 1,
+        title: 'test',
+        desc: 'test desc',
+        image: require('~/assets/images/img/service3.png')
+      }
+    ]
   }),
   mounted() {
-    getAllServices((isOkay, data) => {
-      if (isOkay) {
-        this.cards = data;
-        console.log(this.cards)
-      } else {
-        console.log(data)
-      }
-    })
   }
 }
 </script>

@@ -175,6 +175,7 @@ export default {
     changeMode: false,
     showDelete: false,
   }),
+  middleware: 'checkUser',
   methods: {
     handleChange(id) {
       this.activeComp = id;

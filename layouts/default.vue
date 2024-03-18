@@ -10,7 +10,7 @@
         <span class="top-section-text mr-4 block min-w-max">
           book now fro first time %56 off
         </span>
-        <nuxt-link to="#" class="py-1.5 px-4 rounded-full top-section-link flex items-center min-w-max">
+        <nuxt-link to="/reservation" class="py-1.5 px-4 rounded-full top-section-link flex items-center min-w-max">
           book services
           <svg class="ml-3" xmlns="http://www.w3.org/2000/svg" width="5" height="10" viewBox="0 0 5 10" fill="none">
             <path d="M1 9L3.58579 6.41421C4.36684 5.63316 4.36683 4.36683 3.58579 3.58579L1 1" stroke="#FA5770"
@@ -33,7 +33,7 @@
           <div class="top-section-left-line"></div>
           <img src="~/assets/images/icons/Star-white.svg" class="ml-3" alt="">
         </div>
-        <nuxt-link to="#" class="py-1.5 px-4 rounded-full top-section-link flex items-center min-w-max">
+        <nuxt-link to="/reservation" class="py-1.5 px-4 rounded-full top-section-link flex items-center min-w-max">
           book services
           <svg class="ml-3" xmlns="http://www.w3.org/2000/svg" width="5" height="10" viewBox="0 0 5 10" fill="none">
             <path d="M1 9L3.58579 6.41421C4.36684 5.63316 4.36683 4.36683 3.58579 3.58579L1 1" stroke="#FA5770"

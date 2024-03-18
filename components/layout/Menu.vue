@@ -4,27 +4,34 @@
       <MenuMobile :active="showMenu" @close="showMenu = false"/>
       <div class="flex items-center w-full justify-between">
         <div class="menu-links lg:flex hidden items-center">
-          <nuxt-link to="#" class="menu-link font-s-13 py-3 px-4 rounded-full flex items-center"
-                     active-class="menu-link-active">
+          <div class="menu-link font-s-13 py-3 px-4 rounded-full flex items-center"
+               active-class="menu-link-active">
             process
             <svg class="ml-4" xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6" fill="none">
               <path d="M1 1L3.58579 3.58579C4.36684 4.36684 5.63317 4.36683 6.41421 3.58579L9 1" stroke="#3D3948"
                     stroke-width="2" stroke-linecap="round"/>
             </svg>
-          </nuxt-link>
-          <nuxt-link to="#" class="menu-link font-s-13 py-3 px-4 rounded-full flex items-center"
-                     active-class="menu-link-active">
+            <MenuDropdown :links="processLinks"/>
+          </div>
+          <div class="menu-link font-s-13 py-3 px-4 rounded-full flex items-center">
             body areas
             <svg class="ml-4" xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6" fill="none">
               <path d="M1 1L3.58579 3.58579C4.36684 4.36684 5.63317 4.36683 6.41421 3.58579L9 1" stroke="#3D3948"
                     stroke-width="2" stroke-linecap="round"/>
             </svg>
+            <MenuDropdown :links="bodyLinks"/>
+          </div>
+          <nuxt-link to="/categoryBlog" class="menu-link font-s-13 py-3 px-4 rounded-full flex items-center">
+            blogs
           </nuxt-link>
-          <nuxt-link exact v-for="link in menuLinks" :key="link.id" :to="link.route"
-                     class="menu-link font-s-13 py-3 px-4 rounded-full"
-                     active-class="menu-link-active">
-            {{ link.title }}
-          </nuxt-link>
+          <div class="menu-link font-s-13 py-3 px-4 rounded-full flex items-center">
+            abous us
+            <svg class="ml-4" xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6" fill="none">
+              <path d="M1 1L3.58579 3.58579C4.36684 4.36684 5.63317 4.36683 6.41421 3.58579L9 1" stroke="#3D3948"
+                    stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            <MenuDropdown :links="aboutLinks"/>
+          </div>
         </div>
         <div class="menu-icon lg:hidden" @click="showMenu = !showMenu">
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -69,13 +76,17 @@
       </div>
       <div class="w-full hidden md:flex items-center justify-end">
         <div class="menu-profile cursor-pointer">
-          <img src="~/assets/images/img/user.svg" alt="">
+          <nuxt-link to="/dashboard">
+            <img src="~/assets/images/img/user.svg" alt="">
+          </nuxt-link>
         </div>
         <Button stroke="white" title="book services" type="base-button" base="c-button-1" class="md:flex hidden"/>
       </div>
       <div class="w-full flex items-center justify-end md:hidden">
-        <img src="~/assets/images/img/user.svg" class="mr-4 cursor-pointer" alt="">
-        <Button stroke="white" type="base-button" base="c-button-1" class="md:hidden">
+        <nuxt-link to="/dashboard">
+          <img src="~/assets/images/img/user.svg" class="mr-4 cursor-pointer" alt="">
+        </nuxt-link>
+        <Button title="book services" stroke="white" type="base-button" base="c-button-1" class="md:hidden">
           <svg style="margin-left: 0 !important;" width="24" height="23" viewBox="0 0 24 23" fill="none"
                xmlns="http://www.w3.org/2000/svg">
             <g filter="url(#filter0_d_735_646)">
@@ -105,15 +116,19 @@
 </template>
 
 <script>
-import {menuLinks} from "./data";
+import {processLinks, aboutLinks, bodyLinks} from "./data";
 import Button from "~/components/elements/Button";
 import MenuMobile from "~/components/layout/MenuMobile";
+import MenuDropdown from "~/components/layout/MenuDropdown";
 
 export default {
-  components: {MenuMobile, Button},
+  components: {MenuDropdown, MenuMobile, Button},
   data: () => ({
-    menuLinks,
+    processLinks,
+    aboutLinks,
+    bodyLinks,
     showMenu: false,
+
   })
 }
 </script>
@@ -137,6 +152,8 @@ export default {
   &-link {
     margin-right: 32px;
     min-width: max-content;
+    cursor: pointer;
+    position: relative;
 
     &:last-child {
       margin-right: 0;
@@ -230,6 +247,17 @@ export default {
 
       &-triangle-2 {
         right: -60px;
+      }
+    }
+  }
+}
+</style>
+<style lang="scss">
+.menu {
+  &-link {
+    &:hover {
+      .dropdown {
+        display: flex !important;
       }
     }
   }

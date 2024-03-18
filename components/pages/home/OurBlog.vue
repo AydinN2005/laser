@@ -24,7 +24,7 @@
       </div>
       <div class="lg:flex hidden w-full justify-end">
         <Button stroke="white" base="c-button-2" type="purple-button" title="see all"
-                class="mb-4 blog-btn"/>
+                class="mb-4 blog-btn" route="/categoryBlog"/>
       </div>
     </div>
     <div class="blog-slider mt-14">

@@ -127,9 +127,9 @@
                           values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
                           result="hardAlpha"
                         />
-                        <feOffset />
-                        <feGaussianBlur stdDeviation="8" />
-                        <feComposite in2="hardAlpha" operator="out" />
+                        <feOffset/>
+                        <feGaussianBlur stdDeviation="8"/>
+                        <feComposite in2="hardAlpha" operator="out"/>
                         <feColorMatrix
                           type="matrix"
                           values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.24 0"
@@ -160,13 +160,13 @@
               class="home-hero-video-descbox flex items-center justify-between"
             >
               <div class="flex items-center home-hero-video-descbox-images">
-                <img src="~/assets/images/img/videoPerson1.png" alt="" />
-                <img src="~/assets/images/img/videoPerson2.png" alt="" />
+                <img src="~/assets/images/img/videoPerson1.png" alt=""/>
+                <img src="~/assets/images/img/videoPerson2.png" alt=""/>
               </div>
               <span class="text-white text-xs font-bold block text-center ml-3">
                 +1500 happy clients from our services
               </span>
-              <div class="home-hero-video-descbox-button">book now</div>
+              <nuxt-link to="/reservation" class="home-hero-video-descbox-button">book now</nuxt-link>
             </div>
           </div>
         </div>
@@ -185,7 +185,7 @@
           class="absolute w-full home-hero-slider-white-bg"
         />
         <div class="home-hero-slider w-full flex flex-col justify-between">
-          <img src="~/assets/images/img/dashedBorder.png" alt="" />
+          <img src="~/assets/images/img/dashedBorder.png" alt=""/>
           <div class="home-hero-slider-border">
             <Slider
               :nav="false"
@@ -227,7 +227,7 @@
               </div>
             </Slider>
           </div>
-          <img src="~/assets/images/img/dashedBorder.png" alt="" />
+          <img src="~/assets/images/img/dashedBorder.png" alt=""/>
         </div>
       </div>
     </div>
@@ -239,7 +239,7 @@ import Button from '~/components/elements/Button'
 import Slider from '~/components/helper/Slider'
 
 export default {
-  components: { Slider, Button },
+  components: {Slider, Button},
 }
 </script>
 
@@ -311,8 +311,8 @@ export default {
         padding-left: 12px;
         background: var(--gray-bg);
         box-shadow: 0px 8px 12px 0px rgba(61, 57, 72, 0.16),
-          -1px -1px 12px 0px rgba(0, 0, 0, 0.04) inset,
-          2px 2px 28px 0px rgba(255, 255, 255, 0.2) inset;
+        -1px -1px 12px 0px rgba(0, 0, 0, 0.04) inset,
+        2px 2px 28px 0px rgba(255, 255, 255, 0.2) inset;
         margin-top: 30px;
 
         &-images {
@@ -348,8 +348,8 @@ export default {
           border-radius: 100px;
           background: var(--primary-purple);
           box-shadow: 0px 8px 12px 0px rgba(154, 119, 255, 0.16),
-            -1px -1px 12px 0px rgba(0, 0, 0, 0.04) inset,
-            2px 2px 28px 0px rgba(255, 255, 255, 0.2) inset;
+          -1px -1px 12px 0px rgba(0, 0, 0, 0.04) inset,
+          2px 2px 28px 0px rgba(255, 255, 255, 0.2) inset;
 
           &:hover {
             color: var(--gray-bg);
@@ -382,7 +382,7 @@ export default {
       &-text {
         color: unset;
         text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff,
-          1px 1px 0 #fff;
+        1px 1px 0 #fff;
       }
     }
   }
@@ -402,27 +402,33 @@ export default {
     }
   }
 }
+
 @media screen and (max-width: 767px) {
   .home {
     &-hero {
       &-title-1 {
         font-size: 24px;
       }
+
       &-title-2 {
         font-size: 32px;
       }
+
       &-video {
         &-button {
           width: 67px;
           height: 67px;
         }
+
         &-descbox {
           border-radius: 28px;
           flex-direction: column;
           padding: 8px;
+
           span {
             margin: 16px 0 18px 0;
           }
+
           &-button {
             width: 100%;
             text-align: center;
@@ -431,6 +437,7 @@ export default {
         }
       }
     }
+
     &-text-img {
       right: unset;
       left: -12px;

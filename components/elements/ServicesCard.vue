@@ -1,31 +1,33 @@
 <template>
-  <div class="flex flex-col card relative">
-    <div class="absolute card-img-container">
-      <div class="relative flex items-center justify-center">
-        <div class="card-bg-1"></div>
-        <div class="card-bg-2"></div>
-        <img :src="img" alt="" class="card-img">
+  <nuxt-link :to="`/singleService/${title}`">
+    <div class="flex flex-col card relative">
+      <div class="absolute card-img-container">
+        <div class="relative flex items-center justify-center">
+          <div class="card-bg-1"></div>
+          <div class="card-bg-2"></div>
+          <img :src="img" alt="" class="card-img">
+        </div>
       </div>
-    </div>
-    <div class="flex items-center">
+      <div class="flex items-center">
       <span class="text-base font-bold mr-3 block w-full">
         {{ title }}
       </span>
-      <img src="~/assets/images/img/servicesStarBlack.svg" class="black-star" alt="">
-      <img src="~/assets/images/img/servicesStarWhite.svg" class="white-star" alt="">
+        <img src="~/assets/images/img/servicesStarBlack.svg" class="black-star" alt="">
+        <img src="~/assets/images/img/servicesStarWhite.svg" class="white-star" alt="">
+      </div>
+      <p class="mt-2 text-xs font-normal">
+        {{ desc }}
+      </p>
+      <div class="card-btn">
+        <svg width="47" height="46" viewBox="0 0 47 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="23.4236" cy="23.01" r="21.5" fill="#F6F0FF" stroke="#EDE2FF" stroke-width="3"/>
+          <path
+            d="M31.178 16.2556C31.178 15.7033 30.7303 15.2556 30.178 15.2556L21.178 15.2556C20.6257 15.2556 20.178 15.7033 20.178 16.2556C20.178 16.8079 20.6257 17.2556 21.178 17.2556L29.178 17.2556L29.178 25.2556C29.178 25.8079 29.6257 26.2556 30.178 26.2556C30.7303 26.2556 31.178 25.8079 31.178 25.2556L31.178 16.2556ZM29.4709 15.5485L15.9622 29.0572L17.3764 30.4714L30.8851 16.9627L29.4709 15.5485Z"
+            fill="#3D3948"/>
+        </svg>
+      </div>
     </div>
-    <p class="mt-2 text-xs font-normal">
-      {{ desc }}
-    </p>
-    <div class="card-btn">
-      <svg width="47" height="46" viewBox="0 0 47 46" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="23.4236" cy="23.01" r="21.5" fill="#F6F0FF" stroke="#EDE2FF" stroke-width="3"/>
-        <path
-          d="M31.178 16.2556C31.178 15.7033 30.7303 15.2556 30.178 15.2556L21.178 15.2556C20.6257 15.2556 20.178 15.7033 20.178 16.2556C20.178 16.8079 20.6257 17.2556 21.178 17.2556L29.178 17.2556L29.178 25.2556C29.178 25.8079 29.6257 26.2556 30.178 26.2556C30.7303 26.2556 31.178 25.8079 31.178 25.2556L31.178 16.2556ZM29.4709 15.5485L15.9622 29.0572L17.3764 30.4714L30.8851 16.9627L29.4709 15.5485Z"
-          fill="#3D3948"/>
-      </svg>
-    </div>
-  </div>
+  </nuxt-link>
 </template>
 
 <script>
