@@ -29,6 +29,7 @@
       :type="eye ? 'text' : 'password'"
       name=""
       id=""
+      v-model="textInput"
       :placeholder="placeHolder"
       :readonly="readOnly"
     />
@@ -102,18 +103,29 @@
 
 <script>
 export default {
-  props: ['title', 'placeHolder', 'type', 'options', 'required', 'bg', 'icon', 'readOnly'],
+  props: ['title', 'placeHolder', 'type', 'options', 'required', 'bg', 'icon', 'readOnly', 'data'],
   data: () => ({
     arrowStatus: false,
     eye: false,
     textInput: '',
   }),
+  mounted() {
+    this.setData()
+  },
   methods: {
     hideEye() {
       this.eye = false;
     },
     showEye() {
       this.eye = true;
+    },
+    setData() {
+      this.textInput = this.data
+    },
+    watch: {
+      data() {
+        this.setData()
+      }
     }
   }
 }
