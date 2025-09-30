@@ -1,5 +1,9 @@
 # laser2
 
+note that : 
+
+This website had backend before , but for now there is not any server , and it's just the front of website .
+
 ## Build Setup
 
 ```bash
